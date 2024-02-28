@@ -1,0 +1,20 @@
+{{ block title }} Universidad {{ endblock }}
+{{ block content }}
+<div class="card bg-light m-3">
+<div class="card-body"> 
+    <h3>
+        Por favor,responda la encuesta.
+    </h3>
+    {{if player.status == "estudiante"}}
+    
+        ¿En que universidad esta estudiando?
+    
+    {{ formfield 'university' }}
+    {{ else }}
+    ¿En que universidad estudio?
+    
+    {{formfields}}
+    {{endif}}
+    {{ next_button }}
+</div></div>
+{{ endblock }}
