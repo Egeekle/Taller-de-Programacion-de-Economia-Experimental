@@ -1,13 +1,12 @@
-{{ block title }}Your Decision - Round {{player.round_number}} {{ endblock }}
+{{ block title }}Tu Decisión - Ronda {{player.round_number}} {{ endblock }}
 {{ block content }}
     <p>
-        You are <strong> {{C.DICTATOR_ROLE}} </strong>.
-        Please decide how much of the {{ C.ENDOWMENT }}
-        you will keep for yourself.
+        Eres <strong> {{C.DICTATOR_ROLE}} </strong>.
+        Por favor decide cuánto de los {{ C.ENDOWMENT }}
+        deseas quedarte.
     </p>
 
     {{ formfields }}
-    {{include_sibling 'instructions.html'}}
     {{ next_button }}
-
+    {{include_sibling 'instructions.html'}}
 {{ endblock }}

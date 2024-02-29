@@ -1,23 +1,28 @@
-{{ block title }}Results{{ endblock }}
+{{ block title }}Resultados{{ endblock }}
 {{ block content }}
     <p>
-        {{if accepted == "Sí"}}
+        {{if group.accepted == "Sí"}}
             {{ if player.id_in_group == 1 }}
-                You are {{C.DICTATOR_ROLE}} and decided to keep <strong>{{ group.kept }}</strong> for yourself.
+             Eres {{C.DICTATOR_ROLE}} y decidiste quedarte con <strong>{{ group.kept }}</strong> para ti y {{C.RECIPIENT_ROLE}} aceptó tu oferta.
+             Entonces, obtuviste <strong>{{ group.kept }}</strong>.
             {{ else }}
-             You are {{C.RECIPIENT_ROLE}} and {{C.DICTATOR_ROLE}} decided to keep <strong>{{ group.kept }}</strong>, so
-             you got <strong>{{ offer }}</strong>.
+             Eres {{C.RECIPIENT_ROLE}} y {{C.DICTATOR_ROLE}} decidió quedarse con <strong>{{ group.kept }}</strong>. Dado que aceptaste la oferta, obtuviste <strong>{{ offer }}</strong>.
             {{ endif }}
         {{else}}
             {{ if player.id_in_group == 1 }}
-            You are {{C.DICTATOR_ROLE}} and decided to keep <strong>{{ group.kept }}</strong> for yourself.
-            Sin embargo, {{C.RECIPIENT_ROLE}} rechazó tu oferta, por lo que ambos no obtuvieron ningún pago.
+            Eres {{C.DICTATOR_ROLE}} e hiciste una propuesta para quedarte con <strong>{{ group.kept }}</strong>.
+            Sin embargo, {{C.RECIPIENT_ROLE}} rechazó tu oferta. Por lo tanto, <strong>ambos no obtuvieron ningún pago.</strong>
             {{ else }}
-            Eres {{C.RECIPIENT_ROLE}} y rechazaste la oferta de {{C.DICTATOR_ROLE}}. Por lo tanto, ambos no obtuvieron ningún pago.
+            Eres {{C.RECIPIENT_ROLE}} y rechazaste la oferta de {{C.DICTATOR_ROLE}} de {{group.kept}}. Por lo tanto, <strong>ambos no obtuvieron ningún pago.</strong>
             {{ endif }}
         {{endif}}
-        {{include_sibling 'instructions.html'}}
-        {{ next_button }}
+        {{if player.round_number == 1}}
+            {{next_button}}
+        {{else}}
+            <p>Gracias por participar.</p>
+        {{endif}}
     </p>
     
 {{ endblock }}
+
+

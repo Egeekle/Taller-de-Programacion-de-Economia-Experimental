@@ -2,17 +2,16 @@
 <div class="card bg-light m-3">
 <div class="card-body">
     <h3>
-        Instructions
+        Instrucciones
     </h3>
 
+    <ol>
+        <li>Serás emparejado aleatoria y anónimamente con otro participante.</li>
+        <li>En este estudio, uno de ustedes será {{C.DICTATOR_ROLE}} y el otro {{C.RECIPIENT_ROLE}}.</li>
+        <li>Antes de tomar una decisión, conocerás que rol te tocó, el cual será asignado aleatoriamente.</li>
+    </ol>
     <p>
-        You will be paired randomly and anonymously with another participant.
-        In this study, one of you will be {{C.DICTATOR_ROLE}} and the other
-        {{C.RECIPIENT_ROLE}}. Prior to making a decision, you will learn your role,
-        which will be randomly assigned.
-    </p>
-    <p>
-        There is {{ C.ENDOWMENT }} to split. {{C.DICTATOR_ROLE}} hará una propuesta a {{C.RECIPIENT_ROLE}} para repartirse las ganancias del premio.
+        Hay un monto de {{ C.ENDOWMENT }} para dividir. {{C.DICTATOR_ROLE}} hará una propuesta a {{C.RECIPIENT_ROLE}} para repartirse las ganancias del premio.
         Si {{C.RECIPIENT_ROLE}} decide rechazar la oferta de {{C.DICTATOR_ROLE}}, ambos jugadores no recibirán pago. En caso {{C.RECIPIENT_ROLE}} acepte la propuesta de {{C.DICTATOR_ROLE}}, ambos obtienen el pago acordado.
     </p>
 </div>

@@ -36,7 +36,7 @@ class Group(BaseGroup):
         doc="""Amount dictator decided to keep for himself""",
         min=0,
         max=C.ENDOWMENT,
-        label="I will keep",
+        label="Me quedaré con",
     )
 
     accepted = models.StringField(
@@ -113,9 +113,9 @@ class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
         group = player.group
-
-        return dict(offer= C.ENDOWMENT - group.kept,
-                    accept= group.accepted)
-
+        if group.accepted=="Sí":
+            return dict(offer= C.ENDOWMENT - group.kept)
+        else:
+            return dict(offer=0)
 
 page_sequence = [Introduction, Offer,SecondWaitPage, Accept, ResultsWaitPage,Results]
