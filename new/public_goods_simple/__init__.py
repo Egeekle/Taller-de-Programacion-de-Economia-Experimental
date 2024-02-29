@@ -5,9 +5,10 @@ from otree.api import *
 class C(BaseConstants):
     NAME_IN_URL = 'public_goods_simple'
     PLAYERS_PER_GROUP = 2
-    NUM_ROUNDS = 1
-    ENDOWMENT = cu(150)
-    MULTIPLIER = 2.2
+    NUM_ROUNDS = 2
+    ENDOWMENT = cu(90)
+    MULTIPLIER = 2
+    
 
 
 class Subsession(BaseSubsession):

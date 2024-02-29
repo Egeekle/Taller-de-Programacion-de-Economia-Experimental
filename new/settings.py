@@ -25,6 +25,12 @@ SESSION_CONFIGS = [
         app_sequence=['public_goods_simple'],
         num_demo_participants=4
     ),
+    dict(
+        name='dictator',
+        display_name="Dictator Game",
+        app_sequence=['dictator'],    
+        num_demo_participants=2
+    )
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
