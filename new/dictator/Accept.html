@@ -1,0 +1,10 @@
+{{block title}}Decisión{{endblock}}
+{{block content}}
+<p>
+    Eres <strong>{{C.RECIPIENT_ROLE}}</strong>.
+    {{C.DICTATOR_ROLE}} te ofrece {{group.kept}}.
+</p>
+{{formfields}}
+{{include_sibling 'instructions.html'}}
+{{next_button}}
+{{endblock}}

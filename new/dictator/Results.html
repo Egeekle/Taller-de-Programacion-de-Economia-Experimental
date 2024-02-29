@@ -1,15 +1,23 @@
 {{ block title }}Results{{ endblock }}
 {{ block content }}
     <p>
-
-        {{ if player.id_in_group == 1 }}
+        {{if accepted == "Sí"}}
+            {{ if player.id_in_group == 1 }}
+                You are {{C.DICTATOR_ROLE}} and decided to keep <strong>{{ group.kept }}</strong> for yourself.
+            {{ else }}
+             You are {{C.RECIPIENT_ROLE}} and {{C.DICTATOR_ROLE}} decided to keep <strong>{{ group.kept }}</strong>, so
+             you got <strong>{{ offer }}</strong>.
+            {{ endif }}
+        {{else}}
+            {{ if player.id_in_group == 1 }}
             You are {{C.DICTATOR_ROLE}} and decided to keep <strong>{{ group.kept }}</strong> for yourself.
-        {{ else }}
-            You are {{C.RECIPIENT_ROLE}} and {{C.DICTATOR_ROLE}} decided to keep <strong>{{ group.kept }}</strong>, so
-            you got <strong>{{ offer }}</strong>.
-        {{ endif }}
-
+            Sin embargo, {{C.RECIPIENT_ROLE}} rechazó tu oferta, por lo que ambos no obtuvieron ningún pago.
+            {{ else }}
+            Eres {{C.RECIPIENT_ROLE}} y rechazaste la oferta de {{C.DICTATOR_ROLE}}. Por lo tanto, ambos no obtuvieron ningún pago.
+            {{ endif }}
+        {{endif}}
+        {{include_sibling 'instructions.html'}}
         {{ next_button }}
     </p>
-    {{ include_sibling 'instructions.html' }}
+    
 {{ endblock }}
