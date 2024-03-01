@@ -11,7 +11,7 @@ this implementation, there are 2 firms competing for 1 period.
 
 class C(BaseConstants):
     NAME_IN_URL = 'cournot'
-    PLAYERS_PER_GROUP = 2
+    PLAYERS_PER_GROUP = 3
     NUM_ROUNDS = 1
     # Total production capacity of all players
     TOTAL_CAPACITY = 60
@@ -32,7 +32,7 @@ class Player(BasePlayer):
         min=0,
         max=C.MAX_UNITS_PER_PLAYER,
         doc="""Quantity of units to produce""",
-        label="How many units will you produce (from 0 to 30)?",
+        label=f"How many units will you produce (from 0 to {C.MAX_UNITS_PER_PLAYER})?",
     )
 
 
@@ -67,7 +67,9 @@ class ResultsWaitPage(WaitPage):
 class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
-        return dict(other_player_units=other_player(player).units)
-
+        player_unit={}
+        for i,other_player in enumerate(player.get_others_in_group()):
+            player_unit[f'player_{i+1}_units'] = other_player.units
+        return player_unit
 
 page_sequence = [Introduction, Decide, ResultsWaitPage, Results]

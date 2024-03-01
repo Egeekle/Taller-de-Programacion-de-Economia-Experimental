@@ -30,8 +30,16 @@ SESSION_CONFIGS = [
         display_name="Dictator Game",
         app_sequence=['dictator'],    
         num_demo_participants=2
+    ),
+    dict(
+        name='cournot',
+        display_name="Cournot Game",
+        app_sequence=['cournot'],
+        num_demo_participants=3    
     )
+
 ]
+
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
