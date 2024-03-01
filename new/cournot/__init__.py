@@ -16,6 +16,7 @@ class C(BaseConstants):
     # Total production capacity of all players
     TOTAL_CAPACITY = 60
     MAX_UNITS_PER_PLAYER = int(TOTAL_CAPACITY / PLAYERS_PER_GROUP)
+    MARGINAL_COST= 5
 
 
 class Subsession(BaseSubsession):
@@ -42,7 +43,7 @@ def set_payoffs(group: Group):
     group.total_units = sum([p.units for p in players])
     group.unit_price = C.TOTAL_CAPACITY - group.total_units
     for p in players:
-        p.payoff = group.unit_price * p.units
+        p.payoff = (group.unit_price - C.MARGINAL_COST)* p.units
 
 
 def other_player(player: Player):
@@ -70,6 +71,7 @@ class Results(Page):
         player_unit={}
         for i,other_player in enumerate(player.get_others_in_group()):
             player_unit[f'player_{i+1}_units'] = other_player.units
+        player_unit['player_3_units'] = player.units
         return player_unit
 
 page_sequence = [Introduction, Decide, ResultsWaitPage, Results]
