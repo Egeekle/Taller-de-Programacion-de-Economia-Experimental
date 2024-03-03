@@ -9,13 +9,14 @@ available amount. If the sum of demands is no larger than the available
 amount, both players get demanded portions. Otherwise, both get nothing.
 """
 
-
 class C(BaseConstants):
     NAME_IN_URL = 'bargaining'
     PLAYERS_PER_GROUP = 2
     NUM_ROUNDS = 2
     AMOUNT_SHARED = cu(100)
-
+    #ROLES
+    SELLER_ROLE = 'El Vendedor'
+    BUYER_ROLE = 'El Comprador'
 
 class Subsession(BaseSubsession):
     pass
