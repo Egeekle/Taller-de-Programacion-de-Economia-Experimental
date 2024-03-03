@@ -6,3 +6,4 @@ Proyectos experimental en ciencias economicas y sociales
 ## Integrantes 
 - 📍 Edison Enrique Velazco Bautista
 - 📍 Pablo Gonzalo Nano Arias
+- 📍 Yodie Milene Amarillo Chavez
