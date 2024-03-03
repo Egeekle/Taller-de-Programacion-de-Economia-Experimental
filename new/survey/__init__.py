@@ -16,10 +16,10 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    age = models.IntegerField(label='Cual es tu edad?', min=18, max=100)
-    status = models.StringField(
-        choices=[['Male','Estudiante'], ['Female','Egresado']],
-        label='Cual es tu ocupacion?',
+    age = models.IntegerField(label='What is your age?', min=13, max=125)
+    gender = models.StringField(
+        choices=[['Male', 'Male'], ['Female', 'Female']],
+        label='What is your gender?',
         widget=widgets.RadioSelect,
     )
     crt_bat = models.IntegerField(
@@ -42,31 +42,18 @@ class Player(BasePlayer):
         how many days would it take for the patch to cover half of the lake?
         '''
     )
-    university = models.StringField(
-        choices=[['Male','UNMSM'], ['Female','PUCP'],['Female','UP'],['Female','UDEP'],['Female','UPC'],['Female','U de Lima'],['Female','UNTRM'],['Female','ESAN'],['Female','UNPRG']]
-        
-    )
-    
 
 
 # FUNCTIONS
-    
-
 # PAGES
-class AgenStatus(Page):
+class Demographics(Page):
     form_model = 'player'
-    form_fields = ['age', 'status']
+    form_fields = ['age', 'gender']
 
 
 class CognitiveReflectionTest(Page):
     form_model = 'player'
     form_fields = ['crt_bat', 'crt_widget', 'crt_lake']
 
-class NameUniversity(Page):
-    form_model = 'player'
-    form_fields = ['university']
 
-class gratefulness(Page):
-    pass
-
-page_sequence = [AgenStatus, NameUniversity,gratefulness]
+page_sequence = [Demographics, CognitiveReflectionTest]

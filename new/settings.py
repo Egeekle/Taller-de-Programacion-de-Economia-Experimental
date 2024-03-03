@@ -3,43 +3,15 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='guess_two_thirds',
-        display_name="Guess 2/3 of the Average",
-        app_sequence=['guess_two_thirds', 'payment_info'],
-        num_demo_participants=3,
+        name='bargaining',
+        display_name="Bargaining Game (modificado)",
+        app_sequence=['bargaining', 'payment_info'],
+        num_demo_participants=2,
     ),
     dict(
-        name='encuesta', 
-        display_name="Encuesta Taller LEEL",
-        app_sequence=['survey'], 
-        num_demo_participants=2
+        name='survey', app_sequence=['survey', 'payment_info'], num_demo_participants=1
     ),
-    dict(name = 'bargaining',
-        display_name="Bargaining",
-        app_sequence=['bargaining'],
-        num_demo_participants=2
-    ),
-    dict(
-        name='public_goods_simple',
-        display_name="Public Goods",
-        app_sequence=['public_goods_simple'],
-        num_demo_participants=4
-    ),
-    dict(
-        name='dictator',
-        display_name="Dictator Game",
-        app_sequence=['dictator'],    
-        num_demo_participants=2
-    ),
-    dict(
-        name='cournot',
-        display_name="Cournot Game",
-        app_sequence=['cournot'],
-        num_demo_participants=3    
-    )
-
 ]
-
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -58,8 +30,8 @@ SESSION_FIELDS = []
 LANGUAGE_CODE = 'es'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'PEN'
-USE_POINTS = True
+REAL_WORLD_CURRENCY_CODE = 'FIC'
+USE_POINTS = False
 
 ROOMS = [
     dict(
@@ -79,6 +51,6 @@ Here are some oTree games.
 """
 
 
-SECRET_KEY = '2704856230086'
+SECRET_KEY = '6368593072228'
 
 INSTALLED_APPS = ['otree']

@@ -13,7 +13,7 @@ amount, both players get demanded portions. Otherwise, both get nothing.
 class C(BaseConstants):
     NAME_IN_URL = 'bargaining'
     PLAYERS_PER_GROUP = 2
-    NUM_ROUNDS = 1
+    NUM_ROUNDS = 2
     AMOUNT_SHARED = cu(100)
 
 
@@ -25,7 +25,7 @@ class Group(BaseGroup):
     total_requests = models.CurrencyField()
 
 
-class Player(BasePlayer):
+class Player(BasePlayer): #eliminar
     request = models.CurrencyField(
         doc="""
         Amount requested by this player.
@@ -34,6 +34,7 @@ class Player(BasePlayer):
         max=C.AMOUNT_SHARED,
         label="Please enter an amount from 0 to 100",
     )
+  #  pago_final= models.CurrencyField()
 
 
 # FUNCTIONS
