@@ -9,36 +9,49 @@
             Bienvenidos a nuestro experimento
         </p>
         <p>
-            Durante este experimento, se te pedirá que tomes varias decisiones,
-            al igual que el resto de participantes. Presta atención a las instrucciones.
-        }   Tus decisiones, junto con las decisiones de los demás participantes, 
-            determinarán tus ganancias, de acuerdo con un conjunto de reglas y roles que se 
-            explicarán a continuación.
+            Se encuentra en una situación de negociación,donde se pondra
+            a prueba su <strong> habilidad para negociar</strong> y llegar a un acuerdo sobre contratacion 
+            de los derechos de propiedad intelectual de la Startup constituida por el modelo de negocio 
+            compatible con el mercado global.Por lo cual se discute el valor de transferencia,asi como regalias en forma de proporcion
+            dentro del acuerdo emitido.
 
-            Nos encontramos en una situación de negociación.Donde se pondra
-            a prueba su habilidad para negociar y llegar a un acuerdo de contratacion 
-            para la fusion de dos empresas.Por lo cual se discute la adicion del area de 
-            innovacion de la empresa XYZ.La empresa se constituye por una startup de tecnologia
-            y servicios de agilizacion de proyectos.
-
-            You have been randomly and anonymously paired with another participant.
-            There is {{ C.AMOUNT_SHARED }} for you to divide.
-            Both of you have to simultaneously and independently demand a portion
-            of the {{ C.AMOUNT_SHARED }} for yourselves. If the sum of your
-            demands is smaller or equal to {{ C.AMOUNT_SHARED }}, both of
-            you get what you demanded. If the sum of your demands is larger
-            than {{ C.AMOUNT_SHARED }},
-            both of you get nothing.
         </p>
+        Durante este juego, se te pedirá que tomes varias decisiones,
+        al igual que el resto de participantes. Presta atención a las instrucciones.
+       Tus decisiones, junto con las decisiones de los demás participantes,pues se considera este juego como las decisiones consecutivas,asimismo
+        dichas acciones determinarán tus ganancias, de acuerdo con un conjunto de reglas y roles que se 
+        explicarán a continuación.
+            
+        </p>
+        <H3>Roles</H3>
         <ul>
             <li>
-                <strong>Comprador:</strong> Debes ingresar un número entre 0 y {{ C.AMOUNT_SHARED }}.
+                <strong>Vendedor:</strong> Tiene la potestad de asignar un oferta inicial dentro del rango de 0 a {{C.AMOUNT_SHARED}} y luego decidir sobre la propuesta de contraoferta sobre {{C.BUYER_ROLE}}.
             </li>
             <li>
-                <strong>Resultado:</strong> Si la suma de las demandas es menor o igual a {{ C.AMOUNT_SHARED }},
-                ambos recibirán lo que demandaron. Si la suma de las demandas es mayor a {{ C.AMOUNT_SHARED }},
-                ambos recibirán 0.
+                <strong>Comprador:</strong> Tiene la oportunidad de decidir sobre la oferta inicial del vendedor, asi como proponer una contraoferta sobre {{C.SELLER_ROLE}}.
             </li>
         </ul>
+        <h3>Reglas </h3>
+        <ul>
+            <li>
+                El juego consta de <strong> 10 rondas</strong>.En cada ronda se le asignara un participante aleatorio,donde se le emparejara con otro participante que sea del rol que no sea el suyo. 
+            <li>
+                Se agrupara dentro de un equipo de 2 participantes
+            </li>
+            <li> Las ganancias dependen de las decisiones,en primer lugar si se establece un acuerdo sobre la contraoferta del {{C.BUYER_ROLE}},entonces {{C.SELLER_ROLE}} ganara mediante el valor aceptado menos la valoracion de la empresa definida como el valor de empresa multiplicado por la proporcion, y las ganancias del {{C.BUYER_ROLE}} se determinara como la diferencia del valor de la empresa y el precio aceptado.No obstante si es que ambos no llegan a un acuerdo,entonces las ganancias seran nulas para ambos.En cada ronda puede haber un resultado diferente</li>
+            <li>Al finalizar la ultima ronda se mostrara los pagos finales que se obtuvieron en cada ronda,asimismo se mostrara el promedio de los pagos obtenidos en todas las rondas.</li>
+            <li> Debido a que se llega a un acuerdo el precio de transferencia,se efectuara una conversion de la moneda usada como <strong> 5,00 FIC = 1 PEN</strong> </li>  
+        </ul>
+        <H3>Recomendaciones</H3>
+            <li>
+                Permanezca en la pagina que le asigno para mayor seguridad a manera de seguir con la dinamica
+            </li>
+            <li>
+                Se tiene alguna pregunta.Levante la mano y espere indicaciones
+            </li>
+            <li>
+                Permanezca en silencio y preste atencion a las indicaciones,no obstante si no se retirado y no podra volver a ingresar
+            </li>
     </div>
 </div>
