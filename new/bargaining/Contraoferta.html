@@ -1,0 +1,15 @@
+{{block  title}}  <center>Contraoferta- Ronda {{player.round_number}}</center>  {{endblock}}
+
+{{block content}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Contraoferta - {{C.BUYER_ROLE}}</h1>
+                <p>En esta ronda, usted tiene la oportunidad de hacer una contraoferta,dado que 
+                    el comprador le ha propuesto una oferta inicial de <strong>{{oferta1}}</strong> con una proporcion de <strong>{{proporcion1}}</strong>. 
+                    Por favor, haga una contraoferta en el siguiente cuadro de texto. Recuerde que su contraoferta debe ser menor o igual a la oferta inicial.</p>
+                <form id="contraofertaForm">
+                    <div class="form-group"
+{{formfields}}
+{{next_button}}       
+{{endblock}}

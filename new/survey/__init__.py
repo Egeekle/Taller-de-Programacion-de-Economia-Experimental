@@ -55,5 +55,7 @@ class CognitiveReflectionTest(Page):
     form_model = 'player'
     form_fields = ['crt_bat', 'crt_widget', 'crt_lake']
 
+class gratefulness(Page):
+    pass
 
-page_sequence = [Demographics, CognitiveReflectionTest]
+page_sequence = [gratefulness]

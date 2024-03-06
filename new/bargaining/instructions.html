@@ -3,10 +3,24 @@
 
     <div class="card-body">
         <h3>
-            Instructions
+            Instrucciones
         </h3>
-
         <p>
+            Bienvenidos a nuestro experimento
+        </p>
+        <p>
+            Durante este experimento, se te pedirá que tomes varias decisiones,
+            al igual que el resto de participantes. Presta atención a las instrucciones.
+        }   Tus decisiones, junto con las decisiones de los demás participantes, 
+            determinarán tus ganancias, de acuerdo con un conjunto de reglas y roles que se 
+            explicarán a continuación.
+
+            Nos encontramos en una situación de negociación.Donde se pondra
+            a prueba su habilidad para negociar y llegar a un acuerdo de contratacion 
+            para la fusion de dos empresas.Por lo cual se discute la adicion del area de 
+            innovacion de la empresa XYZ.La empresa se constituye por una startup de tecnologia
+            y servicios de agilizacion de proyectos.
+
             You have been randomly and anonymously paired with another participant.
             There is {{ C.AMOUNT_SHARED }} for you to divide.
             Both of you have to simultaneously and independently demand a portion
@@ -16,5 +30,15 @@
             than {{ C.AMOUNT_SHARED }},
             both of you get nothing.
         </p>
+        <ul>
+            <li>
+                <strong>Comprador:</strong> Debes ingresar un número entre 0 y {{ C.AMOUNT_SHARED }}.
+            </li>
+            <li>
+                <strong>Resultado:</strong> Si la suma de las demandas es menor o igual a {{ C.AMOUNT_SHARED }},
+                ambos recibirán lo que demandaron. Si la suma de las demandas es mayor a {{ C.AMOUNT_SHARED }},
+                ambos recibirán 0.
+            </li>
+        </ul>
     </div>
 </div>

@@ -9,8 +9,11 @@ SESSION_CONFIGS = [
         num_demo_participants=2,
     ),
     dict(
-        name='survey', app_sequence=['survey', 'payment_info'], num_demo_participants=1
+        name='Bargaining', app_sequence=['bargaining','survey' ], num_demo_participants=2
     ),
+    dict(
+        name='survey',display_name='Encuesta (survey)',app_sequence=['survey'],num_demo_participants=2
+    )
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -56,4 +59,3 @@ SECRET_KEY = '6368593072228'
 INSTALLED_APPS = ['otree']
 
 
-aa
