@@ -2,7 +2,7 @@ from otree.api import *
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'survey'
+    NAME_IN_URL = 'Encuesta'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
 
@@ -16,46 +16,56 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    age = models.IntegerField(label='What is your age?', min=13, max=125)
+    age = models.IntegerField(label='¿Qué edad tiene?', min=14, max=100)
     gender = models.StringField(
-        choices=[['Male', 'Male'], ['Female', 'Female']],
-        label='What is your gender?',
+        choices=[['Masculino', 'Masculino'], ['Femenino', 'Femenino']],
+        label='¿Cuál es su género?',
         widget=widgets.RadioSelect,
     )
-    crt_bat = models.IntegerField(
-        label='''
-        A bat and a ball cost 22 dollars in total.
-        The bat costs 20 dollars more than the ball.
-        How many dollars does the ball cost?'''
+    estudiante = models.StringField(
+        choices=[['Estudiante', 'Estudiante'], ['Egresado', 'Egresado']],
+        label='¿Usted es estudiante o egresado?',
+        widget=widgets.RadioSelect,
     )
-    crt_widget = models.IntegerField(
-        label='''
-        If it takes 5 machines 5 minutes to make 5 widgets,
-        how many minutes would it take 100 machines to make 100 widgets?
-        '''
+    universidad = models.StringField(
+        choices=[['UDEP', 'UDEP'],
+                 ['UP', 'UP'],
+                 ['PUCP', 'PUCP'],
+                 ['UNMSM', 'UNMSM'],
+                 ['UPC', 'UPC'],
+                 ['U de Lima', 'U de Lima'],
+                 ['UNTRM', 'UNTRM'],
+                 ['ESAN', 'ESAN'],
+                 ['UNPRG', 'UNPRG'],
+                 ['Otro', 'Otro']],
+        label='Escoja su universidad:',
+        widget=widgets.RadioSelect,
     )
-    crt_lake = models.IntegerField(
-        label='''
-        In a lake, there is a patch of lily pads.
-        Every day, the patch doubles in size.
-        If it takes 48 days for the patch to cover the entire lake,
-        how many days would it take for the patch to cover half of the lake?
-        '''
+    carrera = models.StringField(
+        choices=[['Economía', 'Economía'],
+                 ['Finanzas', 'Finanzas'],
+                 ['Ingeniería', 'Ingeniería'],
+                 ['Otro', 'Otro']],
+        label='Escoja su carrera:',
+        widget=widgets.RadioSelect,
     )
-
+    ingreso = models.StringField(
+        choices=[['No trabajo', 'No trabajo'],
+                 ['S/0 a S/1025', 'S/0 a S/1025'], 
+                 ['S/1025 a S/1500', 'S/1025 a S/1500'],
+                 ['S/1500 a S/2500', 'S/1500 a S/2500'],
+                 ['S/2500 a más', 'S/2500 a más']],
+        label='¿Cuál es su ingreso percibido?',
+        widget=widgets.RadioSelect,
+    )
 
 # FUNCTIONS
 # PAGES
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['age', 'gender']
-
-
-class CognitiveReflectionTest(Page):
-    form_model = 'player'
-    form_fields = ['crt_bat', 'crt_widget', 'crt_lake']
+    form_fields = ['age', 'gender', 'estudiante','universidad','carrera','ingreso']
 
 class gratefulness(Page):
     pass
 
-page_sequence = [gratefulness]
+page_sequence = [Demographics, gratefulness]

@@ -5,15 +5,12 @@ SESSION_CONFIGS = [
     dict(
         name='bargaining',
         display_name="Bargaining Game (modificado)",
-        app_sequence=['bargaining', 'payment_info'],
+        app_sequence=['bargaining', 'survey'],
         num_demo_participants=2,
     ),
     dict(
-        name='Bargaining', app_sequence=['bargaining','survey' ], num_demo_participants=2
+        name='survey', display_name="Encuesta (survey)" ,app_sequence=['survey'], num_demo_participants=1
     ),
-    dict(
-        name='survey',display_name='Encuesta (survey)',app_sequence=['survey'],num_demo_participants=2
-    )
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -57,5 +54,3 @@ Here are some oTree games.
 SECRET_KEY = '6368593072228'
 
 INSTALLED_APPS = ['otree']
-
-

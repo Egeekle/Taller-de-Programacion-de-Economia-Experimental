@@ -5,53 +5,48 @@
         <h3>
             Instrucciones
         </h3>
-        <p>
-            Bienvenidos a nuestro experimento
-        </p>
-        <p>
-            Se encuentra en una situación de negociación,donde se pondra
-            a prueba su <strong> habilidad para negociar</strong> y llegar a un acuerdo sobre contratacion 
-            de los derechos de propiedad intelectual de la Startup constituida por el modelo de negocio 
-            compatible con el mercado global.Por lo cual se discute el valor de transferencia,asi como regalias en forma de proporcion
-            dentro del acuerdo emitido.
 
+        <p align="justify">
+            ¡Bienvenido jugador(a)!
+            <br>
+                <strong>Por favor, lea todas las instrucciones atentamente.</strong>
+            <br>
+            <br><strong><em>Descripción del experimento:</em></strong>
+            <br>Esta es una versión modificada del <em>Bargaining Game</em> que pretende estudiar los efectos de la información asimétrica en los juegos de negociación.
+            Al inicio del experimento, se le asignará <strong>aleatoriamente</strong> uno de los siguientes roles: <strong>{{C.seller_role}}</strong> o <strong>{{C.buyer_role}}</strong>. 
+            Usted mantendrá dicho rol a lo largo de las <strong>{{n_rondas}} rondas del juego</strong>.
+            En cada una de las rondas, usted será emparejado <strong>aleatoria y anónimamente</strong> con un participante al cual le fue asignado el otro rol (formando así un <strong>grupo de 2 personas</strong>). 
+            Asimismo, a lo largo de este experimento se trabajará con una moneda ficticia, identificada con el código <strong>FIC</strong>.
+            <br>Indepedientemente del rol que se le asigne, <strong>el objetivo principal del juego es que usted obtenga el mayor pago posible en cada ronda</strong>.     
+           <br>
+            <br>
+                <strong><em>Descripción de la tarea:</em></strong>
+           <br>     
+                Usted deberá negociar la adquisición de la <em>startup</em> "Ali-Mercado", un <em>marketplace</em> digital que cuenta con operaciones en Perú y Chile.
+                Para ello, dependiendo del rol que le fue asignado, <strong>se le brindará información (visible en pantalla) acerca del valor de la empresa y/o la valoración elaborada por {{C.seller_role}}.</strong>
+            <br>
+                En el caso del valor de la empresa, se elegirá <strong>aleatoriamente</strong> uno de los siguientes valores: [10, 15, 20, 25, ..., 95].
+                Este valor irá cambiando en cada ronda y será comunicado únicamente al <em>vendedor</em>.
+            <br>
+                Por otra parte, la valoración elaborada por {{C.seller_role}} es proporcional al valor de la empresa. Dicha proporción se elegirá <strong>aleatoriamente</strong> entre uno de los siguientes valores: [0.1, 0.2, 0.3, 0.4, ..., 0.9].
+                La valoración del vendedor se obtiene al multiplicar el valor de la empresa por la proporción seleccionada. El valor de la proporción irá cambiando cada ronda y será comunicado tanto al <em>vendedor</em> como al <em>comprador</em>.
+            <br>
+                <strong>Cada ronda del juego se desarrollará de la siguiente manera:</strong>
+                <ol>
+                    <li>En primer lugar, <em>{{C.seller_role}}</em> relizará una oferta inicial al <em>comprador</em> en base a la información disponible.</li>
+                    <li>Luego, <em>{{C.buyer_role}}</em> realizará una contraoferta definitiva (tómalo o déjalo) en base a la oferta inicial y a la información disponible.</li>
+                    <li>Finalmente, {{C.seller_role}} podrá decidir si es que acepta o rechaza la contraoferta.
+                        <strong>En caso {{C.seller_role}} rechace la contraoferta, el pago será cero para ambos jugadores.</strong>
+                    </li>
+                </ol> 
+            A continuación, se detallarán las fórmulas con las cuales se calcularán los pagos de cada ronda <strong>en caso {{C.seller_role}} acepte la contraoferta:</strong>
+                <ul>
+                <li><strong>Pago del vendedor=</strong> Precio aceptado - Valoración del vendedor
+                <br><em>Donde: Valoración del vendedor= (Valor de la empresa) * (Proporción)</em></li>
+                <li><strong>Pago del comprador=</strong> Valor de la empresa - Precio aceptado </li>
+                </ul>
+            Al finalizar la última ronda, se le mostrará el pago final de todo el experimento, el cual será un promedio de los pagos de todas las rondas.
+            <br><strong>Para concluir la sesión, usted deberá completar la encuesta que se le presentará luego de completar el juego.</strong>
         </p>
-        Durante este juego, se te pedirá que tomes varias decisiones,
-        al igual que el resto de participantes. Presta atención a las instrucciones.
-       Tus decisiones, junto con las decisiones de los demás participantes,pues se considera este juego como las decisiones consecutivas,asimismo
-        dichas acciones determinarán tus ganancias, de acuerdo con un conjunto de reglas y roles que se 
-        explicarán a continuación.
-            
-        </p>
-        <H3>Roles</H3>
-        <ul>
-            <li>
-                <strong>Vendedor:</strong> Tiene la potestad de asignar un oferta inicial dentro del rango de 0 a {{C.AMOUNT_SHARED}} y luego decidir sobre la propuesta de contraoferta sobre {{C.BUYER_ROLE}}.
-            </li>
-            <li>
-                <strong>Comprador:</strong> Tiene la oportunidad de decidir sobre la oferta inicial del vendedor, asi como proponer una contraoferta sobre {{C.SELLER_ROLE}}.
-            </li>
-        </ul>
-        <h3>Reglas </h3>
-        <ul>
-            <li>
-                El juego consta de <strong> 10 rondas</strong>.En cada ronda se le asignara un participante aleatorio,donde se le emparejara con otro participante que sea del rol que no sea el suyo. 
-            <li>
-                Se agrupara dentro de un equipo de 2 participantes
-            </li>
-            <li> Las ganancias dependen de las decisiones,en primer lugar si se establece un acuerdo sobre la contraoferta del {{C.BUYER_ROLE}},entonces {{C.SELLER_ROLE}} ganara mediante el valor aceptado menos la valoracion de la empresa definida como el valor de empresa multiplicado por la proporcion, y las ganancias del {{C.BUYER_ROLE}} se determinara como la diferencia del valor de la empresa y el precio aceptado.No obstante si es que ambos no llegan a un acuerdo,entonces las ganancias seran nulas para ambos.En cada ronda puede haber un resultado diferente</li>
-            <li>Al finalizar la ultima ronda se mostrara los pagos finales que se obtuvieron en cada ronda,asimismo se mostrara el promedio de los pagos obtenidos en todas las rondas.</li>
-            <li> Debido a que se llega a un acuerdo el precio de transferencia,se efectuara una conversion de la moneda usada como <strong> 5,00 FIC = 1 PEN</strong> </li>  
-        </ul>
-        <H3>Recomendaciones</H3>
-            <li>
-                Permanezca en la pagina que le asigno para mayor seguridad a manera de seguir con la dinamica
-            </li>
-            <li>
-                Se tiene alguna pregunta.Levante la mano y espere indicaciones
-            </li>
-            <li>
-                Permanezca en silencio y preste atencion a las indicaciones,no obstante si no se retirado y no podra volver a ingresar
-            </li>
     </div>
 </div>

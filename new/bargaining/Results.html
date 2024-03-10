@@ -1,30 +1,22 @@
-{{ block title }}<center>Resultado de la ronda {{player.round_number}}</center>{{ endblock }}
+{{ block title }}<center>Resultado de la Ronda {{player.round_number}}</center>{{ endblock }}
 {{ block content }}
-    <table class=table style="width: auto">
-        <tr>
-            <td>El valor de la empresa es </td>
-            <th>{{valor_empresa}} </th>
-        </tr>
-        <tr>
-            <td>la proporcion de la empresa fue de</td>   
-            <th>{{proporcion}}</th>
-        </tr>
+    <table class=table style="width: auto" border="2">
         <tr>
             <td>Inicialmente, se realizó una oferta de:</td>
             <th>{{ oferta1 }}</th>
         </tr>
         <tr>
-            <td>Luego, se propuso una contraoferta igual a:</td>
+            <td>Luego, se propuso una contraoferta con un <strong>precio final</strong> igual a:</td>
             <th>{{ contraoferta1 }}</th>
         </tr>
         {{if group.Acepta == "Sí"}}
         <tr>
-            <td>La contraoferta fue aceptada. Por ello, en esta ronda usted obtuvo un pago neto de:</td>
+            <td><strong>La contraoferta fue aceptada.</strong> Por ello, en esta ronda usted obtuvo un pago neto de:</td>
             <th>{{ pago_ronda }}</th>
         </tr>
         {{else}}
         <tr>
-            <td> La contraoferta fue rechazada. Por ello, en esta ronda usted obtuvo un pago neto de:</td>
+            <td><strong>La contraoferta fue rechazada.</strong> Por ello, en esta ronda usted obtuvo un pago neto de:</td>
             <th>{{ pago_ronda }}</th>
         </tr>
         {{endif}}
@@ -33,4 +25,4 @@
     <p>{{ next_button }}</p>
 
 
-{{ endblock}}
+{{ endblock }}

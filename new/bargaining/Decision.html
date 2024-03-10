@@ -1,12 +1,14 @@
-{{block title}} <center>Contraoferta - Ronda {{player.round_number}}</center>  {{endblock}}
+{{block title}} <center>Decisión Final - Ronda {{player.round_number}}</center>{{endblock}}
 {{block content}}
-<p>
-    Se le ha sido asignado el rol de <strong>{{C.SELLER_ROLE}}</strong>.
-    El comprador le ha propuesto una última contraoferta de <strong>{{contraoferta1}}</strong>.
-    <br> Recuerde que el valor de la empresa <em>Ali-Mercado</em> es de <strong>{{valor_empresa}},00 FIC</strong> y la proporción es de <strong>{{proporcion1}}</strong>.</br>
-</p>
 
-{{formfields}}
-{{next_button}}
+    <p>
+        Se le ha sido asignado el rol de <strong>{{C.seller_role}}</strong>.
+        <br>El <em>comprador</em> le ha propuesto una última <strong>contraoferta (tómalo o déjalo) de {{contraoferta1}}</strong>.
+        <br>Recuerde que el valor de la empresa <em>Ali-Mercado</em> es de <strong>{{valor_empresa}},00 FIC</strong> y la proporción es de <strong>{{proporcion1}}</strong>.
+        Por lo tanto, la valoración del vendedor es igual a <strong>{{valoracion_vendedor}} FIC</strong>.
+    </p>
+    {{formfields}}
+
+    {{next_button}}
+
 {{endblock}}
-
